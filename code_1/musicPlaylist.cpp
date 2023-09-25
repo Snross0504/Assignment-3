@@ -68,6 +68,18 @@ bool MusicPlaylist::isEmpty(){
  */
 void MusicPlaylist::displayPlaylist(){
     // TODO
+    Song* currentSong = this->head;
+    while (currentSong != nullptr) {
+        cout << "Displaying songs\n==================";
+        cout << "[ " << currentSong->songName << ", " << currentSong->artistNames << ", ";
+        if (currentSong->liked) {
+            cout << "<3 ] -> ";
+        }
+        else {
+            cout << "<3 ] -> ";
+        }
+    }
+    cout << "NULL\n==================";
 }
 
 
@@ -79,6 +91,18 @@ void MusicPlaylist::displayPlaylist(){
  */
 void MusicPlaylist::addSong(Song* previousSong, Song* newSong){
     // TODO
+      if(head==nullptr){
+        newSong->next=head;
+        head=newSong;
+    }
+    else if(previousSong==nullptr){
+        newSong->next=head;
+        head=newSong;
+        }
+    else{
+        newSong->next=previousSong->next;
+        previousSong->next=newSong;
+    }
 }
 
 /**
@@ -89,6 +113,19 @@ void MusicPlaylist::addSong(Song* previousSong, Song* newSong){
  */
 Song* MusicPlaylist::searchSongByName(std::string name){
     // TODO
+    std::
+    std::cout<<"Enter the song name here: \n";
+    std::cin>>songName;
+
+    Song* currentSong=head;
+    while(currentSong!=nullptr){
+        if(currentSong->songName==name){
+            return currentSong;
+        }
+        currentSong=currentSong->next;
+        }
+         return nullptr;
+    
 }
 
 /**
